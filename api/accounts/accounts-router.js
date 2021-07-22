@@ -45,7 +45,7 @@ router.post(
   }
 );
 
-router.put("/:id", checkAccountId, (req, res, next) => {
+router.put("/:id", checkAccountPayload, checkAccountId, (req, res, next) => {
   // DO YOUR MAGIC
   Accounts.updateById(req.params.id, req.body)
     .then((updatedAccount) => {
